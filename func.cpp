@@ -19,6 +19,8 @@ std::string getPathToInputFile() {
 
 		path_to_file.erase(path_to_file.find_last_not_of(" \t\n\r\v\f") + 1);
 		path_to_file.erase(0, path_to_file.find_first_not_of(" \t\n\r\v\f"));
+
+		in.open(path_to_file);
 	}
 
 	return path_to_file;
