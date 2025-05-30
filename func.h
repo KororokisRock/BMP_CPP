@@ -49,7 +49,7 @@ public:
 
     void deleteRes() {
         delete[] this->arrPalette;
-        delete this->arrImg;
+        delete[] this->arrImg;
         this->arrPalette = nullptr;
         this->arrImg = nullptr;
     }
@@ -154,7 +154,7 @@ public:
     }
 
 
-    void printImgInConsole() {
+    void printImgInConsole() const {
         for (int i = this->HEIGHT - 1; i >= 0; i--) {
             for (int j = 0; j < this->WIDTH; j++) {
                 if (this->bitPerPix == 32) {
@@ -183,7 +183,7 @@ public:
         std::cout << "\n\n";
     }
 
-    bool createBMPFile(std::string file_path) {
+    bool createBMPFile(std::string file_path) const {
 
         std::ofstream out(file_path, std::ios::out | std::ios::binary);
         if (out.is_open()) {
